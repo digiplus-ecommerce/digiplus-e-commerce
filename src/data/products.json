@@ -1,0 +1,15 @@
+[
+  {
+    "_id": "67003aecf7d0b4e213c02858",
+    "product": "anvil dfc2200",
+    "category": "other equipments",
+    "description": "General-purpose equipment from Anvil, likely used in food preparation or storage.",
+    "price": 32500,
+    "status": "active",
+    "image": "https://res.cloudinary.com/dzrovoumr/image/upload/v1728114088/Anvil_DFC2200_zxafr9.png",
+    "quantityInStock": 161,
+    "reorderLevel": 50,
+    "updatedAt": "2025-03-16T11:51:07.995Z",
+    "priceAtSale": "10"
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "_id": "6765adc681cd03c22c94f90a",
+    "company": "apex service",
+    "contacts": "9186754320",
+    "email": "apex@gmail.com",
+    "city": "pasig",
+    "createdAt": "2024-10-28T12:07:02.016Z",
+    "updatedAt": "2025-03-17T14:31:24.154Z",
+    "__v": 5,
+    "cart": [
+      {
+        "productId": "67003aecf7d0b4e213c02854",
+        "quantity": 1,
+        "_id": "67d8323cd677d6a5d49117db"
+      }
+    ],
+    "favorites": [
+      {
+        "productsId": "67003aecf7d0b4e213c02858",
+        "_id": "67d83213d677d6a5d4911758"
+      },
+      {
+        "productsId": "67003aecf7d0b4e213c0284c",
+        "_id": "67d83215d677d6a5d4911765"
+      },
+      {
+        "productsId": "67003aecf7d0b4e213c0284d",
+        "_id": "67d8321bd677d6a5d4911776"
+      }
+    ],
+    "orders": [
+      {
+        "transactionId": "67d8322bd677d6a5d4911795",
+        "_id": "67d8322bd677d6a5d4911797"
+      },
+      {
+        "transactionId": "67d83234d677d6a5d49117b0",
+        "_id": "67d83235d677d6a5d49117b2"
+      }
+    ]
+  }
+]

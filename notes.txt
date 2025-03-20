@@ -1,2 +1,14 @@
 - create simple crud with add favorites with state management using vuex
 - create filters and search functionalities and sorting
+
+In Vue 3, Composables are reusable functions that encapsulate logic and state using the Composition API. They help organize and reuse code across multiple components, making it easier to manage logic like fetching data, form validation, or handling UI interactions.
+
+Why Use Composables?
+Reusability: Extract common logic into reusable functions.
+Separation of Concerns: Keeps components clean by moving logic elsewhere.
+Better Readability & Maintainability: Organizes code better than mixins.
+
+Common Use Cases for Composables
+State management (useCounter, useCart)
+Fetching API data (useFetch)
+Form handling (useFormValidation)

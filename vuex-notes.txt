@@ -1,0 +1,68 @@
+// store/index.js
+import { createStore } from 'vuex';
+
+export default createStore({
+  state: {
+    products: []
+  },
+  mutations: {
+    addProduct(state, product) {
+      state.products.push({ id: Date.now(), ...product });
+    },
+    editProduct(state, updatedProduct) {
+      const index = state.products.findIndex(p => p.id === updatedProduct.id);
+      if (index !== -1) state.products[index] = updatedProduct;
+    },
+    deleteProduct(state, productId) {
+      state.products = state.products.filter(p => p.id !== productId);
+    }
+  },
+  actions: {
+    addProduct({ commit }, product) {
+      commit('addProduct', product);
+    },
+    editProduct({ commit }, product) {
+      commit('editProduct', product);
+    },
+    deleteProduct({ commit }, id) {
+      commit('deleteProduct', id);
+    }
+  },
+  getters: {
+    getProducts: state => state.products,
+    getProductById: state => id => state.products.find(p => p.id === id)
+  }
+});
+
+
+
+
+
+- COMPUTED PROPERTIES IN ADD PRODUCTS
+
+// views/AddProduct.vue
+<template>
+  <div>
+    <h1>Add Product</h1>
+    <form @submit.prevent="add">
+      <input v-model="name" placeholder="Product Name" required />
+      <input v-model="price" type="number" placeholder="Price" required />
+      <button type="submit">Add</button>
+    </form>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
+
+const store = useStore();
+const router = useRouter();
+const name = ref('');
+const price = ref('');
+const add = () => {
+  store.dispatch('addProduct', { name: name.value, price: price.value });
+  router.push('/');
+};
+</script>
