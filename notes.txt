@@ -1,0 +1,2 @@
+- create simple crud with add favorites with state management using vuex
+- create filters and search functionalities and sorting

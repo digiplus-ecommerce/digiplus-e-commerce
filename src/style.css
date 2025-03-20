@@ -1,0 +1,259 @@
+/* ----- Universal Styles ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----- CSS Variables ----- */
+
+/* 
+
+Primary or Base colors use for important actions or information
+Secondary colors are use for highlights (but not important actions)
+Tertiary colors is also use for higlights (optional)
+Grey or Neutral colors are use for text,fonts, links or icons
+
+Tints are lighter version of primary colors use for backgrounds
+Shades is the darker version of primary colors use for borders or seperators
+
+*/
+
+:root {
+  /* Base Colors */
+  --primary: #2e8b57;
+  --secondary: #afcfb9;
+  --neutral: #1d2124;
+
+  /* Base Tints */
+  --primary-tint: #c0dccd;
+  --secondary-tint: #d7e7dc;
+  --neutral-tint: #616466;
+
+  /* Base Shades */
+  --primary-shade: #256f46;
+  --secondary-shade: #9ebaa7;
+  --neutral-shade: #e8e9e9;
+
+  /* Gradients Colors */
+  --primary-gradient: linear-gradient(
+    to right,
+    #2e8b57,
+    #539c6f,
+    #72ad87,
+    #91bea0,
+    #afcfb9
+  );
+}
+
+/* ----- Global Styles ----- */
+body {
+  font-family: "Poppins", serif;
+  background-color: var(--primary-tint);
+  touch-action: manipulation; /* Remove default action of zooming the page when click twice*/
+}
+
+/* ----- Container Styles ----- */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* Utility Styles */
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ----- Headings, Text and Links Styles ----- */
+ul {
+  list-style: none;
+}
+
+p,
+a {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--neutral);
+}
+
+p {
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--neutral);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 5.61rem;
+}
+
+h2 {
+  font-size: 3.209rem;
+}
+
+h3 {
+  font-size: 2.157rem;
+}
+
+h4 {
+  font-size: 2.369rem;
+}
+
+h5 {
+  font-size: 1.777rem;
+}
+h6 {
+  font-size: 1.333rem;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 3px;
+  background-color: var(
+    --light-background
+  ); /* Replace with your actual color value */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary); /* Replace with your actual color value */
+  border-radius: 4px; /* Adjust the value as needed */
+}
+
+/* For Chrome, Edge, and Safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media only screen and (max-width: 992px) {
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 4.209rem;
+  }
+
+  h2 {
+    font-size: 3.157rem;
+  }
+
+  h3 {
+    font-size: 1.963rem;
+  }
+
+  h4 {
+    font-size: 1.333rem;
+  }
+
+  h5,
+  h6 {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 3.157rem;
+  }
+
+  h2 {
+    font-size: 2.369rem;
+  }
+
+  h3 {
+    font-size: 1.777rem;
+  }
+
+  h4 {
+    font-size: 1.333rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+  h6 {
+    font-size: 0.75rem;
+  }
+}
+
+/* Extra for very small screen */
+@media only screen and (max-width: 320px) {
+  p,
+  a {
+    font-size: 0.8rem;
+  }
+
+  h1 {
+    font-size: 2.369rem;
+  }
+
+  h2 {
+    font-size: 1.777rem;
+  }
+
+  h3 {
+    font-size: 1.333rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  h5 {
+    font-size: 0.75rem;
+  }
+  h6 {
+    font-size: 0.75rem;
+  }
+}
+
+/* ----- Suggested Break Points (Can be change depends on requiremnet) ----- */
+
+/* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) {} */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {} */
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {} */
