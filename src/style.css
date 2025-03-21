@@ -33,7 +33,7 @@ Shades is the darker version of primary colors use for borders or seperators
   /* Base Shades */
   --primary-shade: #256f46;
   --secondary-shade: #9ebaa7;
-  --neutral-shade: #e8e9e9;
+  --neutral-shade: #d5e0e0;
 
   /* Gradients Colors */
   --primary-gradient: linear-gradient(

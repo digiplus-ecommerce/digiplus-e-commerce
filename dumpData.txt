@@ -1,0 +1,133 @@
+ {
+    "id": 4,
+    "product": "Casual Shorts",
+    "category": "men",
+    "description": "Breathable and lightweight shorts.",
+    "price": 33000,
+    "colors": ["yellow", "blue"],
+    "sizes": ["s", "m"],
+    "reviews": 270,
+    "star": 4.0,
+    "image": "https://res.cloudinary.com/dzrovoumr/image/upload/v1728114088/Anvil_DFC2200_zxafr9.png",
+    "stock": 140,
+    "address": {
+      "city": "Taguig",
+      "postalCode": 1700,
+      "street": "321 Test Ave",
+      "state": "Metro Manila"
+    }
+  },
+  {
+    "id": 5,
+    "product": "Summer Dress",
+    "category": "women",
+    "description": "Flowy dress for summer days.",
+    "price": 34000,
+    "colors": ["pink", "white"],
+    "sizes": ["m", "lg"],
+    "reviews": 320,
+    "star": 4.8,
+    "image": "https://res.cloudinary.com/dzrovoumr/image/upload/v1728114088/Anvil_DFC2200_zxafr9.png",
+    "stock": 180,
+    "address": {
+      "city": "Mandaluyong",
+      "postalCode": 1700,
+      "street": "789 Fashion Ln",
+      "state": "Metro Manila"
+    }
+  },
+  {
+    "id": 6,
+    "product": "Winter Coat",
+    "category": "sales",
+    "description": "Warm and stylish coat.",
+    "price": 36000,
+    "colors": ["brown", "black"],
+    "sizes": ["lg", "xl"],
+    "reviews": 210,
+    "star": 4.1,
+    "image": "https://res.cloudinary.com/dzrovoumr/image/upload/v1728114088/Anvil_DFC2200_zxafr9.png",
+    "stock": 160,
+    "address": {
+      "city": "Pasay",
+      "postalCode": 1700,
+      "street": "456 Warm Rd",
+      "state": "Metro Manila"
+    }
+  },
+  {
+    "id": 7,
+    "product": "Denim Jacket",
+    "category": "women",
+    "description": "Trendy denim jacket.",
+    "price": 37000,
+    "colors": ["blue", "gray"],
+    "sizes": ["s", "m"],
+    "reviews": 300,
+    "star": 4.4,
+    "image": "https://res.cloudinary.com/dzrovoumr/image/upload/v1728114088/Anvil_DFC2200_zxafr9.png",
+    "stock": 210,
+    "address": {
+      "city": "Marikina",
+      "postalCode": 1700,
+      "street": "123 Denim Blvd",
+      "state": "Metro Manila"
+    }
+  },
+  {
+    "id": 8,
+    "product": "Sports Shoes",
+    "category": "men",
+    "description": "Comfortable running shoes.",
+    "price": 31000,
+    "colors": ["black", "white"],
+    "sizes": ["m", "xxl"],
+    "reviews": 280,
+    "star": 4.7,
+    "image": "https://res.cloudinary.com/dzrovoumr/image/upload/v1728114088/Anvil_DFC2200_zxafr9.png",
+    "stock": 190,
+    "address": {
+      "city": "San Juan",
+      "postalCode": 1700,
+      "street": "987 Jogger St",
+      "state": "Metro Manila"
+    }
+  },
+  {
+    "id": 9,
+    "product": "Leather Belt",
+    "category": "sales",
+    "description": "Durable leather belt.",
+    "price": 30000,
+    "colors": ["brown", "black"],
+    "sizes": ["s", "lg"],
+    "reviews": 240,
+    "star": 4.9,
+    "image": "https://res.cloudinary.com/dzrovoumr/image/upload/v1728114088/Anvil_DFC2200_zxafr9.png",
+    "stock": 130,
+    "address": {
+      "city": "Parañaque",
+      "postalCode": 1700,
+      "street": "654 Belt Dr",
+      "state": "Metro Manila"
+    }
+  },
+  {
+    "id": 10,
+    "product": "Baseball Cap",
+    "category": "sales",
+    "description": "Classic baseball cap.",
+    "price": 28000,
+    "colors": ["white", "green"],
+    "sizes": ["m", "xl"],
+    "reviews": 260,
+    "star": 4.0,
+    "image": "https://res.cloudinary.com/dzrovoumr/image/upload/v1728114088/Anvil_DFC2200_zxafr9.png",
+    "stock": 170,
+    "address": {
+      "city": "Caloocan",
+      "postalCode": 1700,
+      "street": "321 Cap Ave",
+      "state": "Metro Manila"
+    }
+  }
