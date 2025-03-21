@@ -13,6 +13,7 @@ import { RouterLink } from "vue-router";
       <RouterLink to="/womens">Womens</RouterLink>
       <RouterLink to="/mens">Mens</RouterLink>
       <RouterLink to="/sales">Sales</RouterLink>
+      <RouterLink to="/add-product">New Product</RouterLink>
     </div>
   </nav>
 </template>
@@ -39,6 +40,7 @@ nav {
 }
 
 .router-container {
+  width: 100%;
   display: flex;
   justify-content: end;
   align-items: center;

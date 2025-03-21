@@ -1,14 +1,20 @@
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
-import productData from "../data/products.json";
-
-console.log(productData);
+const { product } = defineProps(["product"]);
 </script>
 
 <template>
-  <div v-for="product in productData" :key="product.id" class="card-container">
+  <div class="card-container">
     <div class="card-img-container">
-      <img :src="product.image[0]" alt="product image" class="image" />
+      <img
+        :src="
+          product.image && product.image.length
+            ? product.image[0]
+            : '/null-png.png'
+        "
+        alt="product image"
+        class="image"
+      />
     </div>
 
     <div class="card-info">
@@ -19,16 +25,13 @@ console.log(productData);
         Category: <span>{{ product.category }}</span>
       </p>
       <p>
-        Price: <span>{{ product.price }}</span>
-      </p>
-      <p>
         Reviews: <span>{{ product.reviews }}</span>
       </p>
     </div>
 
     <div class="btn-group">
       <p>₱{{ product.price.toLocaleString() }}</p>
-      <RouterLink :to="`/product/${product.id}`">Details</RouterLink>
+      <RouterLink :to="`/product/${product.id}`">More Details</RouterLink>
     </div>
   </div>
 </template>
@@ -36,7 +39,7 @@ console.log(productData);
 <style scoped>
 .card-container {
   width: 100%;
-  height: 24.5rem;
+  height: auto;
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 
@@ -64,10 +67,9 @@ console.log(productData);
 }
 
 .card-info p {
-  line-height: 1.2;
   font-weight: 500;
-  font-size: 0.9rem;
-  letter-spacing: 0.2px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1px;
 }
 
 .card-info p span {

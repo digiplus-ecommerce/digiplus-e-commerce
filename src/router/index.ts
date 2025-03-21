@@ -4,6 +4,7 @@ import HomeView from "../views/HomeView.vue";
 import MensView from "../views/MensView.vue";
 import SalesView from "../views/SalesView.vue";
 import ProductsDetails from "../views/ProductsDetails.vue";
+import CreateProductView from "../views/CreateProductView.vue";
 
 const routes = [
   { path: "/", component: HomeView },
@@ -11,6 +12,7 @@ const routes = [
   { path: "/womens", component: WomensView },
   { path: "/mens", component: MensView },
   { path: "/sales", component: SalesView },
+  { path: "/add-product", component: CreateProductView },
 ];
 
 const router = createRouter({
