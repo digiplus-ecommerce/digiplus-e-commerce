@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ProductsCard from "../components/ProductsCard.vue";
-import productData from "../data/products.json";
+import ProductsCard from "../../components/ProductsCard.vue";
+import productData from "../../data/products.json";
 
 console.log(productData);
 </script>

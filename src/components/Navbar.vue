@@ -15,6 +15,11 @@ import { RouterLink } from "vue-router";
       <RouterLink to="/sales">Sales</RouterLink>
       <RouterLink to="/add-product">New Product</RouterLink>
     </div>
+
+    <div class="auth-links">
+      <RouterLink to="/login">ordiales@gmail.com</RouterLink>
+      <RouterLink to="/login">Logout</RouterLink>
+    </div>
   </nav>
 </template>
 
@@ -51,5 +56,24 @@ a {
   text-decoration: none;
   padding: 0.2rem 1rem;
   font-weight: 600;
+}
+
+.auth-links {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 5px;
+}
+
+.auth-links a {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.auth-links a:last-child {
+  background-color: var(--primary-tint);
+  border-radius: 5px;
+  border: none;
 }
 </style>
