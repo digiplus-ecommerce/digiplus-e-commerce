@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
+import Button from "./Button.vue";
 const { product } = defineProps(["product"]);
 </script>
 
@@ -31,7 +32,9 @@ const { product } = defineProps(["product"]);
 
     <div class="btn-group">
       <p>₱{{ product.price.toLocaleString() }}</p>
-      <RouterLink :to="`/product/${product.id}`">More Details</RouterLink>
+      <Button btnType="link" :to="`/product/${product.id}`" variant="primary"
+        >More Details</Button
+      >
     </div>
   </div>
 </template>
