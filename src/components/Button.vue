@@ -51,6 +51,7 @@ function handleClick(event: MouseEvent) {
   >
     <slot />
   </RouterLink>
+
   <button
     v-else
     :type="btnType"
