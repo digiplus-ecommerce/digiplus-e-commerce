@@ -25,9 +25,14 @@ export default defineComponent({
 </script>
 
 <template>
-  <component :is="layout">
+  <component :is="layout" class="wrapper">
     <router-view :key="$route.path" />
   </component>
 </template>
 
-<style scoped></style>
+<style scoped>
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+</style>

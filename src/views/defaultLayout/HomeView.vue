@@ -1,34 +1,41 @@
 <script setup lang="ts">
-import ProductsCard from "../../components/ProductsCard.vue";
+// import ProductsCard from "../../components/ProductsCard.vue";
+import Banner from "../../components/Banner.vue";
 import productData from "../../data/products.json";
 
 console.log(productData);
 </script>
 
 <template>
-  <div class="main-container">
-    <p class="title">Hello From Home Page</p>
+  <div class="wrapper">
+    <!-- banner section -->
+    <div class="banner-container">
+      <Banner />
+    </div>
 
-    <div class="card-grid">
+    <!-- <div class="card-grid">
       <ProductsCard
         v-for="product in productData"
         :key="product.id"
         :product="product"
       />
-    </div>
+    </div> -->
   </div>
 </template>
 
 <style scoped>
-.title {
-  margin-bottom: 2rem;
+.banner-container {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  height: 40vh;
+  margin-bottom: 3rem;
 }
 
+/* products wrapper grid */
 .card-grid {
   display: grid;
-  /* grid-template-columns: repeat(5, 18.5rem); */
   grid-template-columns: repeat(5, 1fr);
-
   gap: 10px;
 }
 </style>

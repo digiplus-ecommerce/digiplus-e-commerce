@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar.vue";
 
 <template>
   <Navbar />
-  <main>
+  <main class="main-container">
     <slot>
       <!-- Where the page content will go -->
     </slot>

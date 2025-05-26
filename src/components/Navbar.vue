@@ -13,7 +13,7 @@ import { RouterLink } from "vue-router";
       <RouterLink to="/womens">Womens</RouterLink>
       <RouterLink to="/mens">Mens</RouterLink>
       <RouterLink to="/sales">Sales</RouterLink>
-      <RouterLink to="/add-product">New Product</RouterLink>
+      <RouterLink to="/add-product">Add Products</RouterLink>
     </div>
 
     <div class="auth-links">
@@ -28,10 +28,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 1440px;
   height: 5rem;
-  background-color: var(--secondary-shade);
-  padding: 0.5rem 2rem;
+  margin: 0 auto;
+  margin-bottom: 3rem;
 }
 
 .logo-wrapper {
@@ -49,7 +49,6 @@ nav {
   display: flex;
   justify-content: end;
   align-items: center;
-  gap: 1rem;
 }
 
 a {
