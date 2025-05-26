@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { onMounted, onUpdated, watch } from "vue";
 import { ref } from "vue";
 
 const timer = ref(10);
-const timerMessage = ref(null);
-const intervalId = ref(null);
+const timerMessage = ref<string | null>(null);
+const intervalId = ref<number | null>(null);
 
 const handleStartTimer = () => {
   if (intervalId.value) {
@@ -21,7 +20,9 @@ const handleStartTimer = () => {
 
     if (timer.value === 0) {
       timerMessage.value = "Timer is finished";
-      clearInterval(intervalId.value);
+      if (intervalId.value) {
+        clearInterval(intervalId.value);
+      }
     }
   }, 1000);
 };
