@@ -1,32 +1,32 @@
 <template>
   <!-- left -->
-  <div class="banner-left">
-    <div class="layer" />
-    <img src="../assets/banner-sneaker.jpg" alt="banner-left" />
-  </div>
+  <el-col :span="16">
+    <div class="image-wrapper">
+      <div class="layer" />
+      <el-image :src="bannerLeft" fit="cover" lazy />
+    </div>
+  </el-col>
 
   <!-- right -->
-  <div class="banner-right">
-    <div class="layer" />
-    <img src="../assets/banner-shoe.jpg" alt="banner-right" />
-  </div>
+  <el-col :span="8">
+    <div class="image-wrapper">
+      <div class="layer" />
+      <el-image :src="bannerRight" fit="cover" lazy />
+    </div>
+  </el-col>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import bannerLeft from "../assets/banner-img/banner-sneaker.jpg";
+import bannerRight from "../assets/banner-img/banner-shoe.jpg";
+</script>
 
 <style scoped>
-.banner-left {
+.image-wrapper {
   position: relative;
   width: 100%;
-  flex: 1;
+  height: 100%;
 }
-
-.banner-right {
-  position: relative;
-  width: 100%;
-  max-width: 30rem;
-}
-
 .layer {
   content: "";
   position: absolute;
@@ -35,7 +35,7 @@
   width: 100%;
   height: 100%;
   border-radius: 30px;
-  opacity: 40%;
+  opacity: 30%;
   background-image: linear-gradient(
     to left top,
     #afcfb9,
@@ -47,14 +47,9 @@
   z-index: 100;
 }
 
-img {
+.el-image {
   width: 100%;
   height: 100%;
   border-radius: 30px;
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  object-fit: cover;
 }
 </style>

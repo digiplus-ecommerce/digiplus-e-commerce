@@ -1,34 +1,41 @@
 <script setup lang="ts">
-// import ProductsCard from "../../components/ProductsCard.vue";
+import ProductsCard from "../../components/ProductsCard.vue";
 import Banner from "../../components/Banner.vue";
+// import Carousel from "../../components/Carousel.vue";
 import productData from "../../data/products.json";
 
 console.log(productData);
 </script>
 
 <template>
-  <div class="wrapper">
-    <!-- banner section -->
-    <div class="banner-container">
-      <Banner />
-    </div>
+  <!-- banner section -->
+  <el-row :gutter="30" class="banner-container">
+    <Banner />
+  </el-row>
 
-    <!-- <div class="card-grid">
-      <ProductsCard
-        v-for="product in productData"
-        :key="product.id"
-        :product="product"
-      />
-    </div> -->
+  <!-- <el-row class="carousel-container">
+    <el-col :span="24">
+      <Carousel />
+    </el-col>
+  </el-row> -->
+
+  <div class="card-grid">
+    <ProductsCard
+      v-for="product in productData"
+      :key="product.id"
+      :product="product"
+    />
   </div>
 </template>
 
 <style scoped>
 .banner-container {
-  display: flex;
-  gap: 10px;
+  margin-bottom: 3rem;
+}
+
+.carousel-container {
   width: 100%;
-  height: 40vh;
+  height: 100%;
   margin-bottom: 3rem;
 }
 
