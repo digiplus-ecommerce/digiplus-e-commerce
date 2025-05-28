@@ -1,12 +1,27 @@
 <template>
   <el-dialog
-    title="Warning"
-    width="500"
+    width="1000"
     align-center
     :model-value="isDialogOpen"
     @close="emits('update:isDialogOpen', false)"
   >
-    <span>Open the dialog from the center from the screen</span>
+    <template #header>
+      <p class="dialog-header">Product Details</p>
+    </template>
+
+    <div class="body-container">
+      <div class="image-container">
+        <el-image :src="product?.image" fit="contain" lazy />
+      </div>
+
+      <div class="details-container">
+        <p class="title">{{ product?.title }}</p>
+        <p class="category">{{ product?.category }}</p>
+        <p class="description">{{ product?.description }}</p>
+        <p>₱{{ product?.price?.toLocaleString() }}</p>
+      </div>
+    </div>
+
     <template #footer>
       <div class="dialog-footer">
         <Button
@@ -16,7 +31,7 @@
           >Cancel</Button
         >
         <Button type="primary" btnType="button" @click="handleSubmit">
-          Confirm
+          Add to Cart
         </Button>
       </div>
     </template>
@@ -47,4 +62,67 @@ console.log(isLoading);
 console.log(error);
 </script>
 
-<style scoped></style>
+<style scoped>
+.dialog-header {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--neutral);
+  font-size: 24px;
+  margin-bottom: 3rem;
+}
+
+.body-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.image-container {
+  width: 100%;
+  height: 20rem;
+}
+
+.details-container {
+  width: 100%;
+  height: 100%;
+}
+
+.el-image {
+  width: 100%;
+  height: 100%;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+
+.title {
+  font-weight: 700;
+  color: var(--neutral);
+  font-size: 24px;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.category,
+.description {
+  font-size: 12px;
+  margin-bottom: 2rem;
+}
+
+.category {
+  font-weight: 600;
+  color: rgb(168, 164, 164);
+}
+
+.description {
+  font-weight: 400;
+  color: var(--neutral);
+}
+</style>
