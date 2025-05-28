@@ -6,8 +6,6 @@ import ProductsHeader from "../../components/ProductsHeader.vue";
 import TitleSeperator from "../../components/TitleSeperator.vue";
 
 const { products, isLoading, error } = useProducts();
-
-console.log(products);
 </script>
 
 <template>

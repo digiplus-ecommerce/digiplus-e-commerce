@@ -13,12 +13,9 @@ export function useProducts() {
     try {
       const res = await Axios.get("/products");
       products.value = res.data;
-
-      //   await Axios.get("/products")
-      //     .then((res) => console.log(res.data))
-      //     .catch((err) => console.log(err));
     } catch (error: any) {
-      error.value = error?.response?.data?.message || "Failed to fetch users";
+      error.value =
+        error?.response?.data?.message || "Failed to fetch products";
     } finally {
       isLoading.value = false;
     }

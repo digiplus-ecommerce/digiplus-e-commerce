@@ -3,7 +3,7 @@ import WomensView from "../views/defaultLayout/WomensView.vue";
 import HomeView from "../views/defaultLayout/HomeView.vue";
 import MensView from "../views/defaultLayout/MensView.vue";
 import SalesView from "../views/defaultLayout/SalesView.vue";
-import ProductsDetails from "../views/defaultLayout/ProductsDetails.vue";
+import ProductDetails from "../components/ProductDetails.vue";
 import CreateProductView from "../views/defaultLayout/CreateProductView.vue";
 import LoginView from "../views/specialLayout/LoginView.vue";
 import SignupView from "../views/specialLayout/SignupView.vue";
@@ -13,7 +13,7 @@ const routes = [
   {
     path: "/product/:id",
     name: "productDetails",
-    component: ProductsDetails,
+    component: ProductDetails,
     meta: { layout: "default" },
   },
   {

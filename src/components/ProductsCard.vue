@@ -1,6 +1,22 @@
 <script setup lang="ts">
+import { ref } from "vue";
+import type { Products } from "../types/products";
 import Button from "./Button.vue";
-const { product } = defineProps(["product"]);
+import ProductDetails from "./ProductDetails.vue";
+
+const productId = ref<string | null>(null);
+const isDialogOpen = ref(false);
+
+defineProps<{
+  product: Products;
+}>();
+
+const productDetails = (id: string) => {
+  isDialogOpen.value = true;
+  if (isDialogOpen.value) {
+    productId.value = id;
+  }
+};
 </script>
 
 <template>
@@ -16,19 +32,25 @@ const { product } = defineProps(["product"]);
       <p class="category">
         Category: <span>{{ product.category }}</span>
       </p>
-
-      <!-- <p>
-        Reviews: <span>{{ product.reviews }}</span>
-      </p> -->
     </div>
 
     <div class="btn-group">
-      <p>₱{{ product.price.toLocaleString() }}</p>
-      <Button btnType="link" :to="`/product/${product.id}`" variant="primary"
-        >More Details</Button
+      <p>₱{{ (product.price ?? 0).toLocaleString() }}</p>
+      <Button
+        btnType="button"
+        type="primary"
+        @click="productDetails(String(product.id))"
       >
+        More Details
+      </Button>
     </div>
   </div>
+
+  <ProductDetails
+    v-if="productId"
+    v-model:isDialogOpen="isDialogOpen"
+    :product="productId"
+  />
 </template>
 
 <style scoped>
