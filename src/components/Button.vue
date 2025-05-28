@@ -88,6 +88,10 @@ function handleClick(event: MouseEvent) {
   color: var(--neutral-shade);
 }
 
+.my-button--primary:hover {
+  background-color: #399260c4;
+}
+
 .my-button--danger {
   background-color: rgb(202, 37, 37);
   color: var(--neutral-shade);
@@ -95,6 +99,11 @@ function handleClick(event: MouseEvent) {
 
 .my-button--default {
   background-color: var(--secondary);
+  color: var(--neutral);
+}
+
+.my-button--default:hover {
+  background-color: #85b493;
   color: var(--neutral);
 }
 

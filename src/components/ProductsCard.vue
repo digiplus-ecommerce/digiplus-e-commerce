@@ -6,27 +6,20 @@ const { product } = defineProps(["product"]);
 <template>
   <div class="card-container">
     <div class="card-img-container">
-      <img
-        :src="
-          product.image && product.image.length
-            ? product.image[0]
-            : '/null-png.png'
-        "
-        alt="product image"
-        class="image"
-      />
+      <el-image :src="product.image" lazy />
     </div>
 
     <div class="card-info">
       <p>
-        Name: <span>{{ product.product }}</span>
+        Name: <span>{{ product.title }}</span>
       </p>
-      <p>
+      <p class="category">
         Category: <span>{{ product.category }}</span>
       </p>
-      <p>
+
+      <!-- <p>
         Reviews: <span>{{ product.reviews }}</span>
-      </p>
+      </p> -->
     </div>
 
     <div class="btn-group">
@@ -54,10 +47,10 @@ const { product } = defineProps(["product"]);
   height: 16.5rem;
 }
 
-.image {
+.el-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: "contain";
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
@@ -72,6 +65,7 @@ const { product } = defineProps(["product"]);
   font-weight: 500;
   font-size: 0.8rem;
   letter-spacing: 0.1px;
+  text-transform: capitalize;
 }
 
 .card-info p span {

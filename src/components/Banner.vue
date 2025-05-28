@@ -27,6 +27,7 @@ import bannerRight from "../assets/banner-img/banner-shoe.jpg";
   width: 100%;
   height: 100%;
 }
+
 .layer {
   content: "";
   position: absolute;
