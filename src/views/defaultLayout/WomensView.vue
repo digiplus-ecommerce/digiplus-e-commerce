@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import Button from "../../components/Button.vue";
-</script>
-
 <template>
   <div class="main-container">
     <p>Hello From Womens Page</p>
@@ -17,6 +13,10 @@ import Button from "../../components/Button.vue";
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import Button from "../../components/Button.vue";
+</script>
 
 <style scoped>
 .idk {

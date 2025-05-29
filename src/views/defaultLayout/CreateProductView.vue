@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="main-container">
     <div class="form-container">
@@ -42,6 +40,8 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts"></script>
 
 <style scoped>
 .form-container {

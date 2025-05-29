@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { RouterLink } from "vue-router";
-</script>
-
 <template>
   <nav>
     <div class="logo-wrapper">
@@ -22,6 +18,10 @@ import { RouterLink } from "vue-router";
     </div>
   </nav>
 </template>
+
+<script setup lang="ts">
+import { RouterLink } from "vue-router";
+</script>
 
 <style scoped>
 nav {

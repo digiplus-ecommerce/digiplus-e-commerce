@@ -1,9 +1,10 @@
 import Axios from "../../services/axios";
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 import type { Products } from "../../types/products";
 
 export function useProducts() {
-  const products = ref<Products[]>([]);
+  const data = ref<Products[]>([]);
+  const product = ref<Products | null>(null);
   const isLoading = ref(false);
   const error = ref<string | null>(null);
 
@@ -12,21 +13,33 @@ export function useProducts() {
     error.value = null;
     try {
       const res = await Axios.get("/products");
-      products.value = res.data;
+      data.value = res.data;
     } catch (error: any) {
-      error.value =
-        error?.response?.data?.message || "Failed to fetch products";
+      error.value = error?.response?.data?.message || "Failed to get products";
     } finally {
       isLoading.value = false;
     }
   };
 
-  onMounted(fetchProducts);
+  const fetchProduct = async (id: string) => {
+    isLoading.value = true;
+    error.value = null;
+    try {
+      const res = await Axios.get(`/products/${id}`);
+      product.value = res.data;
+    } catch (error: any) {
+      error.value = error?.response?.data?.message || "Failed to get product";
+    } finally {
+      isLoading.value = false;
+    }
+  };
 
   return {
-    products,
+    data,
+    product,
     isLoading,
     error,
     fetchProducts,
+    fetchProduct,
   };
 }

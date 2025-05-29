@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import Carousel from "../../components/Carousel.vue";
-</script>
-
 <template>
   <div class="main-container">
     <el-row class="carousel-container">
@@ -11,6 +7,10 @@ import Carousel from "../../components/Carousel.vue";
     </el-row>
   </div>
 </template>
+
+<script setup lang="ts">
+import Carousel from "../../components/Carousel.vue";
+</script>
 
 <style scoped>
 .carousel-container {

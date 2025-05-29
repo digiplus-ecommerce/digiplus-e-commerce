@@ -1,24 +1,3 @@
-<script setup lang="ts">
-import { ref } from "vue";
-import type { Products } from "../types/products";
-import Button from "./Button.vue";
-import ProductDetails from "./ProductDetails.vue";
-
-const productId = ref<string | null>(null);
-const isDialogOpen = ref(false);
-
-defineProps<{
-  product: Products;
-}>();
-
-const productDetails = (id: string) => {
-  isDialogOpen.value = true;
-  if (isDialogOpen.value) {
-    productId.value = id;
-  }
-};
-</script>
-
 <template>
   <div class="card-container">
     <div class="card-img-container">
@@ -49,9 +28,30 @@ const productDetails = (id: string) => {
   <ProductDetails
     v-if="productId"
     v-model:isDialogOpen="isDialogOpen"
-    :product="productId"
+    :productId="productId"
   />
 </template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+import type { Products } from "../types/products";
+import Button from "./Button.vue";
+import ProductDetails from "./ProductDetails.vue";
+
+const productId = ref<string | null>(null);
+const isDialogOpen = ref(false);
+
+defineProps<{
+  product: Products;
+}>();
+
+const productDetails = (id: string) => {
+  isDialogOpen.value = true;
+  if (isDialogOpen.value) {
+    productId.value = id;
+  }
+};
+</script>
 
 <style scoped>
 .card-container {

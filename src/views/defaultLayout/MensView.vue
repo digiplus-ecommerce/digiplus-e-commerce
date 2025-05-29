@@ -1,3 +1,14 @@
+<template>
+  <div class="main-container">
+    <div>
+      <p>Timer is : {{ timer }}</p>
+      <p>Timer message : {{ timerMessage }}</p>
+      <button id="timer" @click="handleStartTimer">Start Timer</button>
+      <button id="timer" @click="handleStopTimer">Stop Timer</button>
+    </div>
+  </div>
+</template>
+
 <script setup lang="ts">
 import { ref } from "vue";
 
@@ -36,16 +47,5 @@ const handleStopTimer = () => {
   timerMessage.value = "Timer is stopped";
 };
 </script>
-
-<template>
-  <div class="main-container">
-    <div>
-      <p>Timer is : {{ timer }}</p>
-      <p>Timer message : {{ timerMessage }}</p>
-      <button id="timer" @click="handleStartTimer">Start Timer</button>
-      <button id="timer" @click="handleStopTimer">Stop Timer</button>
-    </div>
-  </div>
-</template>
 
 <style scoped></style>

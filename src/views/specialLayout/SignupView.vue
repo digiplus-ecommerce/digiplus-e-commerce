@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="card-container">
     <div class="card">
@@ -8,6 +6,8 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts"></script>
 
 <style scoped>
 .card-container {

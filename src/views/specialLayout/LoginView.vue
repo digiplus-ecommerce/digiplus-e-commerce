@@ -1,36 +1,3 @@
-<script setup lang="ts">
-import { DotLottieVue } from "@lottiefiles/dotlottie-vue";
-import type { FormInstance, FormRules } from "element-plus";
-import { reactive, ref } from "vue";
-
-const ruleFormRef = ref<FormInstance>();
-
-const loginForm = reactive({
-  username: "",
-  password: "",
-});
-
-const ruleLoginForm = reactive<FormRules>({
-  username: [
-    { required: true, message: "Username is required", trigger: "blur" },
-  ],
-  password: [
-    { required: true, message: "Password is required", trigger: "blur" },
-  ],
-});
-
-const onSubmit = async () => {
-  try {
-    const isValid = await ruleFormRef.value?.validate();
-    if (isValid) {
-      console.log("Form Submitted");
-    }
-  } catch (error) {
-    console.log("Error Submitted");
-  }
-};
-</script>
-
 <template>
   <div class="login-container">
     <div class="form-wrapper">
@@ -71,6 +38,39 @@ const onSubmit = async () => {
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { DotLottieVue } from "@lottiefiles/dotlottie-vue";
+import type { FormInstance, FormRules } from "element-plus";
+import { reactive, ref } from "vue";
+
+const ruleFormRef = ref<FormInstance>();
+
+const loginForm = reactive({
+  username: "",
+  password: "",
+});
+
+const ruleLoginForm = reactive<FormRules>({
+  username: [
+    { required: true, message: "Username is required", trigger: "blur" },
+  ],
+  password: [
+    { required: true, message: "Password is required", trigger: "blur" },
+  ],
+});
+
+const onSubmit = async () => {
+  try {
+    const isValid = await ruleFormRef.value?.validate();
+    if (isValid) {
+      console.log("Form Submitted");
+    }
+  } catch (error) {
+    console.log("Error Submitted");
+  }
+};
+</script>
 
 <style scoped>
 .login-container {

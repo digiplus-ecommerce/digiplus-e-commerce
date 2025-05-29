@@ -1,3 +1,28 @@
+<template>
+  <!-- The ! in :to="to!" is TypeScript's non-null assertion operator. It tells the TypeScript 
+   compiler that the value of to will definitely not be null or undefined at runtime, even though 
+   the type system thinks it might be.
+   The ! operator essentially tells TypeScript "trust me, this will have a value" -->
+  <RouterLink
+    v-if="props.btnType === 'link'"
+    :to="to!"
+    :class="classes"
+    @click="handleClick"
+  >
+    <slot />
+  </RouterLink>
+
+  <el-button
+    v-else
+    :type="btnType"
+    @click="handleClick"
+    :class="classes"
+    :disabled="props.disabled"
+  >
+    <slot />
+  </el-button>
+</template>
+
 <script setup lang="ts">
 import { computed } from "vue";
 import { RouterLink, type RouteLocationRaw } from "vue-router";
@@ -46,31 +71,6 @@ function handleClick(event: MouseEvent) {
   emit("click", event);
 }
 </script>
-
-<template>
-  <!-- The ! in :to="to!" is TypeScript's non-null assertion operator. It tells the TypeScript 
-   compiler that the value of to will definitely not be null or undefined at runtime, even though 
-   the type system thinks it might be.
-   The ! operator essentially tells TypeScript "trust me, this will have a value" -->
-  <RouterLink
-    v-if="props.btnType === 'link'"
-    :to="to!"
-    :class="classes"
-    @click="handleClick"
-  >
-    <slot />
-  </RouterLink>
-
-  <el-button
-    v-else
-    :type="btnType"
-    @click="handleClick"
-    :class="classes"
-    :disabled="props.disabled"
-  >
-    <slot />
-  </el-button>
-</template>
 
 <style scoped>
 /* Base styles for the button */

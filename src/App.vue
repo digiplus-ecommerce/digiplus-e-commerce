@@ -1,3 +1,9 @@
+<template>
+  <component :is="layout">
+    <router-view :key="$route.path" />
+  </component>
+</template>
+
 <script lang="ts">
 import { defineComponent, computed } from "vue";
 import { useRoute } from "vue-router";
@@ -23,11 +29,5 @@ export default defineComponent({
   },
 });
 </script>
-
-<template>
-  <component :is="layout">
-    <router-view :key="$route.path" />
-  </component>
-</template>
 
 <style scoped></style>

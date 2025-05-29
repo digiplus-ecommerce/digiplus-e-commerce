@@ -1,13 +1,3 @@
-<script setup lang="ts">
-import ProductsCard from "../../components/ProductsCard.vue";
-import Banner from "../../components/Banner.vue";
-import { useProducts } from "../../composables/api/useProducts";
-import ProductsHeader from "../../components/ProductsHeader.vue";
-import TitleSeperator from "../../components/TitleSeperator.vue";
-
-const { products, isLoading, error } = useProducts();
-</script>
-
 <template>
   <!-- banner section -->
   <el-row :gutter="30" class="banner-container">
@@ -34,7 +24,7 @@ const { products, isLoading, error } = useProducts();
 
   <div class="card-grid">
     <div v-if="isLoading">Loading...</div>
-    <div v-else-if="error">Error</div>
+    <div v-else-if="error">{{ error }}</div>
     <ProductsCard
       v-else
       v-for="product in products"
@@ -56,6 +46,22 @@ const { products, isLoading, error } = useProducts();
     </el-col>
   </el-row>
 </template>
+
+<script setup lang="ts">
+import { onMounted } from "vue";
+
+import { useProducts } from "../../composables/api/useProducts";
+import ProductsHeader from "../../components/ProductsHeader.vue";
+import TitleSeperator from "../../components/TitleSeperator.vue";
+import ProductsCard from "../../components/ProductsCard.vue";
+import Banner from "../../components/Banner.vue";
+
+const { data: products, isLoading, error, fetchProducts } = useProducts();
+
+onMounted(() => {
+  fetchProducts();
+});
+</script>
 
 <style scoped>
 .banner-container,

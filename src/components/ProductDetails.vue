@@ -9,7 +9,9 @@
       <p class="dialog-header">Product Details</p>
     </template>
 
-    <div class="body-container">
+    <div v-if="isLoading" class="body-container">Loading...</div>
+    <div v-else-if="error" class="body-container">{{ error }}</div>
+    <div v-else class="body-container">
       <div class="image-container">
         <el-image :src="product?.image" fit="contain" lazy />
       </div>
@@ -18,7 +20,15 @@
         <p class="title">{{ product?.title }}</p>
         <p class="category">{{ product?.category }}</p>
         <p class="description">{{ product?.description }}</p>
-        <p>₱{{ product?.price?.toLocaleString() }}</p>
+        <div class="reviews">
+          <p>
+            Rating: <span>{{ product?.rating?.rate }}</span>
+          </p>
+          <p>
+            Stock: <span>{{ product?.rating?.count }}</span>
+          </p>
+        </div>
+        <p class="price">₱ {{ product?.price?.toLocaleString() }}</p>
       </div>
     </div>
 
@@ -40,10 +50,11 @@
 
 <script setup lang="ts">
 import Button from "./Button.vue";
-import { useProduct } from "../composables/api/useProduct";
+import { useProducts } from "../composables/api/useProducts";
+import { onMounted } from "vue";
 
 const props = defineProps<{
-  product: string;
+  productId: string;
   isDialogOpen: boolean;
 }>();
 
@@ -51,15 +62,15 @@ const emits = defineEmits<{
   (e: "update:isDialogOpen", value: boolean): void;
 }>();
 
-const { product, isLoading, error } = useProduct(props.product);
+const { product, isLoading, error, fetchProduct } = useProducts();
+
+onMounted(() => {
+  fetchProduct(props.productId);
+});
 
 const handleSubmit = () => {
   //
 };
-
-console.log(product);
-console.log(isLoading);
-console.log(error);
 </script>
 
 <style scoped>
@@ -124,5 +135,23 @@ console.log(error);
 .description {
   font-weight: 400;
   color: var(--neutral);
+}
+
+.reviews {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+
+.reviews p {
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 2rem;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 24px;
 }
 </style>

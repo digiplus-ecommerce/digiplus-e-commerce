@@ -5,7 +5,6 @@ import axios from "axios";
 
 const Axios = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL,
-  timeout: 10000, // Requests will stop if they take longer than 10 seconds.
   headers: {
     "Content-Type": "application/json",
   },
