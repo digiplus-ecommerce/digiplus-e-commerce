@@ -15,6 +15,12 @@
     <div class="auth-links">
       <RouterLink to="/login">ordiales@gmail.com</RouterLink>
       <RouterLink to="/login">Logout</RouterLink>
+      <RouterLink to="/login">
+        <el-icon :size="18"><ShoppingBag /></el-icon>
+      </RouterLink>
+      <RouterLink to="/login">
+        <el-icon :size="18"><Van /></el-icon>
+      </RouterLink>
     </div>
   </nav>
 </template>
@@ -28,7 +34,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1440px;
+  width: 100%;
+  padding: 1rem 4rem;
   height: 5rem;
   margin: 0 auto;
   margin-bottom: 3rem;
@@ -47,14 +54,29 @@ nav {
 .router-container {
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
+}
+
+.router-container a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  margin: auto;
+  display: block;
+  transition: 0.15s;
+}
+
+.router-container a:hover::after {
+  width: 100%;
 }
 
 a {
   text-decoration: none;
   padding: 0.2rem 1rem;
   font-weight: 600;
+  line-height: 2;
 }
 
 .auth-links {
@@ -62,12 +84,16 @@ a {
   display: flex;
   justify-content: end;
   align-items: center;
-  gap: 5px;
+  gap: 2rem;
 }
 
 .auth-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 1rem;
   font-weight: 500;
+  padding: 0;
 }
 
 .auth-links a:last-child {

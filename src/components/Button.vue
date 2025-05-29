@@ -74,6 +74,7 @@ function handleClick(event: MouseEvent) {
 
 <style scoped>
 /* Base styles for the button */
+
 .my-button {
   padding: 0.3rem 1rem;
   border: none;
@@ -81,6 +82,7 @@ function handleClick(event: MouseEvent) {
   font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
+  line-height: 2;
 }
 
 .my-button--primary {

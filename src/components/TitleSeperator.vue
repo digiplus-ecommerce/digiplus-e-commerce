@@ -15,10 +15,12 @@ const props = defineProps<TitleSeperator>();
 .banner-title {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 30px;
-  width: 100%;
+  width: 1440px;
+  margin: 0 auto;
   height: 100%;
   text-align: center;
-  padding: 3rem;
+  padding: 3rem 5rem;
 }
 </style>

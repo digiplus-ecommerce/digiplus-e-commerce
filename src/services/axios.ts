@@ -12,7 +12,7 @@ const Axios = axios.create({
 
 // For authentication
 
-// ✅ REQUEST INTERCEPTOR
+// REQUEST INTERCEPTOR
 Axios.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
@@ -27,7 +27,7 @@ Axios.interceptors.request.use(
 );
 
 // Optional: Set up interceptors for auth or error handling
-// ✅ RESPONSE INTERCEPTOR
+// RESPONSE INTERCEPTOR
 Axios.interceptors.response.use(
   (response) => response,
   (error) => {

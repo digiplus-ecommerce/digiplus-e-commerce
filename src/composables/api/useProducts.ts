@@ -14,6 +14,7 @@ export function useProducts() {
     try {
       const res = await Axios.get("/products");
       data.value = res.data;
+      await new Promise((resolve) => setTimeout(resolve, 1000));
     } catch (error: any) {
       error.value = error?.response?.data?.message || "Failed to get products";
     } finally {
@@ -27,6 +28,7 @@ export function useProducts() {
     try {
       const res = await Axios.get(`/products/${id}`);
       product.value = res.data;
+      await new Promise((resolve) => setTimeout(resolve, 1000));
     } catch (error: any) {
       error.value = error?.response?.data?.message || "Failed to get product";
     } finally {

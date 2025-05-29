@@ -9,7 +9,7 @@
       <p class="dialog-header">Product Details</p>
     </template>
 
-    <div v-if="isLoading" class="body-container">Loading...</div>
+    <LoadingSpinner v-if="isLoading" />
     <div v-else-if="error" class="body-container">{{ error }}</div>
     <div v-else class="body-container">
       <div class="image-container">
@@ -38,10 +38,21 @@
           type="danger"
           btnType="button"
           @click="emits('update:isDialogOpen', false)"
-          >Cancel</Button
         >
+          <span class="icon-container">
+            <el-icon :size="18">
+              <Warning />
+            </el-icon>
+            Cancel
+          </span>
+        </Button>
         <Button type="primary" btnType="button" @click="handleSubmit">
-          Add to Cart
+          <span class="icon-container">
+            <el-icon :size="18">
+              <ShoppingCartFull />
+            </el-icon>
+            Add to Cart
+          </span>
         </Button>
       </div>
     </template>
@@ -52,6 +63,7 @@
 import Button from "./Button.vue";
 import { useProducts } from "../composables/api/useProducts";
 import { onMounted } from "vue";
+import LoadingSpinner from "./LoadingSpinner.vue";
 
 const props = defineProps<{
   productId: string;
@@ -153,5 +165,12 @@ const handleSubmit = () => {
 .price {
   font-weight: 600;
   font-size: 24px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 </style>

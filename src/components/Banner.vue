@@ -28,6 +28,11 @@ import bannerRight from "../assets/banner-img/banner-shoe.jpg";
   height: 100%;
 }
 
+.el-col {
+  width: 100%;
+  height: 100%;
+}
+
 .layer {
   content: "";
   position: absolute;
@@ -35,7 +40,6 @@ import bannerRight from "../assets/banner-img/banner-shoe.jpg";
   bottom: 0;
   width: 100%;
   height: 100%;
-  border-radius: 30px;
   opacity: 30%;
   background-image: linear-gradient(
     to left top,
@@ -51,6 +55,5 @@ import bannerRight from "../assets/banner-img/banner-shoe.jpg";
 .el-image {
   width: 100%;
   height: 100%;
-  border-radius: 30px;
 }
 </style>

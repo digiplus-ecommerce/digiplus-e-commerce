@@ -4,6 +4,12 @@
     <Banner />
   </el-row>
 
+  <!-- <el-row class="carousel-container">
+    <el-col :span="24">
+      <Carousel />
+    </el-col>
+  </el-row> -->
+
   <!-- title section -->
   <el-row class="row-title">
     <el-col :span="24">
@@ -18,15 +24,14 @@
   </el-row>
 
   <!-- products grid -->
-  <el-row :gutter="50" class="product-header">
+  <el-row class="product-header">
     <ProductsHeader />
   </el-row>
 
-  <div class="card-grid">
-    <div v-if="isLoading">Loading...</div>
-    <div v-else-if="error">{{ error }}</div>
+  <LoadingSpinner v-if="isLoading" />
+  <div v-else-if="error">{{ error }}</div>
+  <div v-else class="card-grid">
     <ProductsCard
-      v-else
       v-for="product in products"
       :key="product.id"
       :product="product"
@@ -49,12 +54,12 @@
 
 <script setup lang="ts">
 import { onMounted } from "vue";
-
 import { useProducts } from "../../composables/api/useProducts";
 import ProductsHeader from "../../components/ProductsHeader.vue";
 import TitleSeperator from "../../components/TitleSeperator.vue";
 import ProductsCard from "../../components/ProductsCard.vue";
 import Banner from "../../components/Banner.vue";
+import LoadingSpinner from "../../components/LoadingSpinner.vue";
 
 const { data: products, isLoading, error, fetchProducts } = useProducts();
 
@@ -69,29 +74,25 @@ onMounted(() => {
   margin-bottom: 3rem;
 }
 
-.banner-title {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  padding: 3rem;
+.banner-container {
+  height: 34rem;
 }
 
 .product-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border: 1px solid red; */
-  width: 100%;
+  width: 1440px;
+  margin: 0 auto;
   height: 8rem;
   margin-bottom: 3rem;
 }
 
 /* products wrapper grid */
 .card-grid {
+  width: 1440px;
   display: grid;
+  margin: 0 auto;
   grid-template-columns: repeat(5, 1fr);
   gap: 30px;
   margin-bottom: 3rem;
