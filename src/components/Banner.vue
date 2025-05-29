@@ -1,6 +1,6 @@
 <template>
   <!-- left -->
-  <el-col :span="16">
+  <el-col :span="17">
     <div class="image-wrapper">
       <div class="layer" />
       <el-image :src="bannerLeft" fit="cover" lazy />
@@ -8,7 +8,7 @@
   </el-col>
 
   <!-- right -->
-  <el-col :span="8">
+  <el-col :span="7">
     <div class="image-wrapper">
       <div class="layer" />
       <el-image :src="bannerRight" fit="cover" lazy />

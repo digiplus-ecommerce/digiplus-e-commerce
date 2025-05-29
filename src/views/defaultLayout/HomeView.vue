@@ -1,6 +1,6 @@
 <template>
   <!-- banner section -->
-  <el-row :gutter="30" class="banner-container">
+  <el-row class="banner-container">
     <Banner />
   </el-row>
 
@@ -72,6 +72,11 @@ onMounted(() => {
 .banner-container,
 .row-title {
   margin-bottom: 3rem;
+}
+
+.banner-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .banner-container {

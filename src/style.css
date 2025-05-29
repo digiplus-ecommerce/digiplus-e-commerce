@@ -48,6 +48,7 @@ Shades is the darker version of primary colors use for borders or seperators
 
 /* ----- Global Styles ----- */
 body {
+  position: relative;
   font-family: "Poppins", serif;
   background-color: var(--primary-tint);
   touch-action: manipulation; /* Remove default action of zooming the page when click twice*/
@@ -55,6 +56,7 @@ body {
 
 /* ----- Container Styles ----- */
 .main-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;

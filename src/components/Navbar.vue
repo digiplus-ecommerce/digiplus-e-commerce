@@ -8,7 +8,8 @@
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/womens">Womens</RouterLink>
       <RouterLink to="/mens">Mens</RouterLink>
-      <RouterLink to="/sales">Sales</RouterLink>
+      <RouterLink to="/electronics">Electronics</RouterLink>
+      <RouterLink to="/jewelry">Jewelry</RouterLink>
       <RouterLink to="/add-product">Add Products</RouterLink>
     </div>
 

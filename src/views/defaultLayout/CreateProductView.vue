@@ -1,5 +1,24 @@
 <template>
-  <div class="main-container">
+  <el-dialog
+    :model-value="isAddProducts"
+    title="Warning"
+    width="500"
+    align-center
+    @close="emits('update:isAddProducts', false)"
+  >
+    <span>Open the dialog from the center from the screen</span>
+    <template #footer>
+      <div class="dialog-footer">
+        <el-button @click="emits('update:isAddProducts', false)"
+          >Cancel</el-button
+        >
+        <el-button type="primary" @click="emits('update:isAddProducts', false)">
+          Confirm
+        </el-button>
+      </div>
+    </template>
+  </el-dialog>
+  <!-- <div class="main-container">
     <div class="form-container">
       <p class="title">Create Product</p>
 
@@ -38,10 +57,18 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{
+  isAddProducts: boolean;
+}>();
+
+const emits = defineEmits<{
+  (e: "update:isAddProducts", value: boolean): void;
+}>();
+</script>
 
 <style scoped>
 .form-container {

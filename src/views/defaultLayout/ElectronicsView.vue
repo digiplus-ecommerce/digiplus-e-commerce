@@ -1,15 +1,16 @@
 <template>
   <div class="main-container">
-    <el-row class="carousel-container">
+    <p>Hello to Electronics</p>
+    <!-- <el-row class="carousel-container">
       <el-col :span="24">
         <Carousel />
       </el-col>
-    </el-row>
+    </el-row> -->
   </div>
 </template>
 
 <script setup lang="ts">
-import Carousel from "../../components/Carousel.vue";
+// import Carousel from "../../components/Carousel.vue";
 </script>
 
 <style scoped>

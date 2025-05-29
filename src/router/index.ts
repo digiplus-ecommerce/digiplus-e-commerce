@@ -2,11 +2,12 @@ import { createWebHistory, createRouter } from "vue-router";
 import WomensView from "../views/defaultLayout/WomensView.vue";
 import HomeView from "../views/defaultLayout/HomeView.vue";
 import MensView from "../views/defaultLayout/MensView.vue";
-import SalesView from "../views/defaultLayout/SalesView.vue";
+import ElectronicsView from "../views/defaultLayout/ElectronicsView.vue";
 import ProductDetails from "../components/ProductDetails.vue";
 import CreateProductView from "../views/defaultLayout/CreateProductView.vue";
 import LoginView from "../views/specialLayout/LoginView.vue";
 import SignupView from "../views/specialLayout/SignupView.vue";
+import JewelryView from "../views/defaultLayout/JewelryView.vue";
 
 const routes = [
   { path: "/", name: "home", component: HomeView, meta: { layout: "default" } },
@@ -29,9 +30,15 @@ const routes = [
     meta: { layout: "default" },
   },
   {
-    path: "/sales",
-    name: "sales",
-    component: SalesView,
+    path: "/electronics",
+    name: "electronics",
+    component: ElectronicsView,
+    meta: { layout: "default" },
+  },
+  {
+    path: "/jewelry",
+    name: "jewelry",
+    component: JewelryView,
     meta: { layout: "default" },
   },
   {
