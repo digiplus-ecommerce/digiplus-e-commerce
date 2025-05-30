@@ -1,54 +1,32 @@
 <template>
-  <div class="card-container">
-    <div class="card">
-      <div class="card-face card-front">Front</div>
-      <div class="card-face card-back">Back</div>
-    </div>
-  </div>
+  <el-space class="signup-wrapper">
+    <el-space class="form-wrapper">
+      <el-space class="image-container"></el-space>
+
+      <el-space class="form-container"></el-space>
+    </el-space>
+  </el-space>
 </template>
 
 <script setup lang="ts"></script>
 
 <style scoped>
-.card-container {
-  perspective: 1000px;
-}
-
-.card {
-  width: 200px;
-  height: 300px;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
-}
-
-.card:hover {
-  transform: rotateY(180deg);
-}
-
-.card-face {
-  position: absolute;
+.signup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+  height: 100vh;
 }
 
-.card-front {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-}
+.form-wrapper {
+  width: 100%;
+  min-width: 85rem;
+  height: 600px;
+  border: 1px solid red;
 
-.card-back {
-  background-color: #007bff;
-  color: white;
-  transform: rotateY(180deg);
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: 24px;
 }
 </style>

@@ -31,10 +31,10 @@
       <RouterLink to="/login">
         <el-text>Logout</el-text>
       </RouterLink>
-      <RouterLink to="/login">
+      <RouterLink to="/signup">
         <el-icon :size="18"><ShoppingBag /></el-icon>
       </RouterLink>
-      <RouterLink to="/login">
+      <RouterLink to="/signup">
         <el-icon :size="20"><Van /></el-icon>
       </RouterLink>
     </el-space>
