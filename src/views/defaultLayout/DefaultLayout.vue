@@ -11,18 +11,6 @@
 
   <CreateProductView v-model:isAddProducts="isAddProducts" />
 
-  <!-- <el-dialog v-model="isAddProducts" title="Warning" width="500" align-center>
-    <span>Open the dialog from the center from the screen</span>
-    <template #footer>
-      <div class="dialog-footer">
-        <el-button @click="isAddProducts = false">Cancel</el-button>
-        <el-button type="primary" @click="isAddProducts = false">
-          Confirm
-        </el-button>
-      </div>
-    </template>
-  </el-dialog> -->
-
   <main class="main-container">
     <slot>
       <!-- Where the page content will go -->

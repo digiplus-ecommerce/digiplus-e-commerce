@@ -29,14 +29,14 @@
   </el-row>
 
   <LoadingSpinner v-if="isLoading" />
-  <div v-else-if="error">{{ error }}</div>
-  <div v-else class="card-grid">
+  <el-space v-else-if="error">{{ error }}</el-space>
+  <el-row v-else class="card-container">
     <ProductsCard
       v-for="product in products"
       :key="product.id"
       :product="product"
     />
-  </div>
+  </el-row>
 
   <!-- end title section -->
   <el-row class="row-title">
@@ -74,6 +74,14 @@ onMounted(() => {
   margin-bottom: 3rem;
 }
 
+.row-title,
+.product-header,
+.card-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 .banner-container {
   display: flex;
   justify-content: space-between;
@@ -87,19 +95,25 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1440px;
+  width: 100%;
   margin: 0 auto;
   height: 8rem;
   margin-bottom: 3rem;
 }
 
-/* products wrapper grid */
-.card-grid {
-  width: 1440px;
+.card-container {
   display: grid;
+  /* grid-template-columns: repeat(5, 1fr); */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  width: 100%;
   margin: 0 auto;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 30px;
   margin-bottom: 3rem;
+}
+
+@media only screen and (max-width: 990px) {
+  .banner-container {
+    flex-direction: column;
+  }
 }
 </style>

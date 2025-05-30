@@ -1,8 +1,8 @@
 <template>
-  <div class="banner-title">
-    <h2>{{ props.title }}</h2>
+  <el-space wrap direction="vertical" size="large" class="banner-title">
+    <el-text class="title">{{ props.title }}</el-text>
     <p>{{ props.description }}</p>
-  </div>
+  </el-space>
 </template>
 
 <script setup lang="ts">
@@ -14,13 +14,14 @@ const props = defineProps<TitleSeperator>();
 <style scoped>
 .banner-title {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 30px;
-  width: 1440px;
+  width: 100%;
   margin: 0 auto;
   height: 100%;
   text-align: center;
-  padding: 3rem 5rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 42px;
 }
 </style>

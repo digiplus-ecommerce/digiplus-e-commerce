@@ -9,58 +9,36 @@
     <span>Open the dialog from the center from the screen</span>
     <template #footer>
       <div class="dialog-footer">
-        <el-button @click="emits('update:isAddProducts', false)"
-          >Cancel</el-button
+        <Button
+          type="danger"
+          btnType="button"
+          @click="emits('update:isAddProducts', false)"
         >
-        <el-button type="primary" @click="emits('update:isAddProducts', false)">
-          Confirm
-        </el-button>
+          <span class="icon-container">
+            <el-icon :size="18">
+              <Warning />
+            </el-icon>
+            Cancel
+          </span>
+        </Button>
+        <Button
+          type="primary"
+          btnType="button"
+          @click="emits('update:isAddProducts', false)"
+        >
+          <span class="icon-container">
+            <el-icon :size="18"><CirclePlus /></el-icon>
+            Add Products
+          </span>
+        </Button>
       </div>
     </template>
   </el-dialog>
-  <!-- <div class="main-container">
-    <div class="form-container">
-      <p class="title">Create Product</p>
-
-      <div class="basic-container">
-        <p class="container-title">Basic Details</p>
-        <div class="input-wrapper">
-          <label>Product Name</label>
-          <input type="text" placeholder="Input Product" />
-        </div>
-
-        <div class="input-wrapper">
-          <label>Description</label>
-          <textarea placeholder="Add Description here..."></textarea>
-        </div>
-
-        <div class="join-input">
-          <div class="input-wrapper">
-            <label>Category</label>
-            <input type="text" placeholder="Input Category" />
-          </div>
-
-          <div class="input-wrapper">
-            <label>Price</label>
-            <input type="number" placeholder="Input Price" />
-          </div>
-
-          <div class="input-wrapper">
-            <label>Reviews</label>
-            <input type="number" placeholder="Input Reviews" />
-          </div>
-
-          <div class="input-wrapper">
-            <label>Rating</label>
-            <input type="number" placeholder="Input Rating" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
 </template>
 
 <script setup lang="ts">
+import Button from "../../components/Button.vue";
+
 defineProps<{
   isAddProducts: boolean;
 }>();

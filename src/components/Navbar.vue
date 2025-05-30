@@ -1,28 +1,43 @@
 <template>
   <nav>
-    <div class="logo-wrapper">
-      <p>Logo</p>
-    </div>
+    <el-space wrap>
+      <RouterLink to="/">
+        <el-text tag="b" class="custom-text">Logo</el-text>
+      </RouterLink>
+    </el-space>
 
-    <div class="router-container">
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/womens">Womens</RouterLink>
-      <RouterLink to="/mens">Mens</RouterLink>
-      <RouterLink to="/electronics">Electronics</RouterLink>
-      <RouterLink to="/jewelry">Jewelry</RouterLink>
-      <RouterLink to="/add-product">Add Products</RouterLink>
-    </div>
+    <el-space class="link-space">
+      <RouterLink to="/">
+        <el-text>Home</el-text>
+      </RouterLink>
+      <RouterLink to="/womens">
+        <el-text>Womens</el-text>
+      </RouterLink>
+      <RouterLink to="/mens">
+        <el-text>Mens</el-text>
+      </RouterLink>
+      <RouterLink to="/electronics">
+        <el-text>Electronics</el-text>
+      </RouterLink>
+      <RouterLink to="/jewelry">
+        <el-text>Jewelry</el-text>
+      </RouterLink>
+    </el-space>
 
-    <div class="auth-links">
-      <RouterLink to="/login">ordiales@gmail.com</RouterLink>
-      <RouterLink to="/login">Logout</RouterLink>
+    <el-space class="auth-links" alignment="center" :size="5">
+      <RouterLink to="/login">
+        <el-text>ordiales@gmail.com</el-text>
+      </RouterLink>
+      <RouterLink to="/login">
+        <el-text>Logout</el-text>
+      </RouterLink>
       <RouterLink to="/login">
         <el-icon :size="18"><ShoppingBag /></el-icon>
       </RouterLink>
       <RouterLink to="/login">
-        <el-icon :size="18"><Van /></el-icon>
+        <el-icon :size="20"><Van /></el-icon>
       </RouterLink>
-    </div>
+    </el-space>
   </nav>
 </template>
 
@@ -42,24 +57,17 @@ nav {
   margin-bottom: 3rem;
 }
 
-.logo-wrapper {
-  width: 100%;
-  height: auto;
-}
-
-.logo-wrapper p {
+.custom-text {
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.router-container {
+.el-space {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.router-container a::after {
+.link-space a::after {
   content: "";
   width: 0%;
   height: 2px;
@@ -69,37 +77,28 @@ nav {
   transition: 0.15s;
 }
 
-.router-container a:hover::after {
+.link-space a:hover::after {
   width: 100%;
 }
 
 a {
-  text-decoration: none;
   padding: 0.2rem 1rem;
-  font-weight: 600;
-  line-height: 2;
+  font-weight: 700;
 }
 
 .auth-links {
-  width: 100%;
-  display: flex;
   justify-content: end;
-  align-items: center;
-  gap: 2rem;
 }
 
 .auth-links a {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 0;
 }
 
-.auth-links a:last-child {
-  background-color: var(--primary-tint);
-  border-radius: 5px;
-  border: none;
+@media only screen and (max-width: 990px) {
+  nav {
+    display: none;
+  }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container">
+  <el-col class="card-col">
     <div class="card-img-container">
       <el-image :src="product.image" lazy />
     </div>
@@ -23,7 +23,7 @@
         More Details
       </Button>
     </div>
-  </div>
+  </el-col>
 
   <ProductDetails
     v-if="productId"
@@ -54,12 +54,11 @@ const productDetails = (id: string) => {
 </script>
 
 <style scoped>
-.card-container {
+.card-col {
   width: 100%;
   height: auto;
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-
   display: flex;
   flex-direction: column;
 }

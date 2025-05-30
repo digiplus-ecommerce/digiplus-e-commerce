@@ -6,30 +6,35 @@
     @close="emits('update:isDialogOpen', false)"
   >
     <template #header>
-      <p class="dialog-header">Product Details</p>
+      <el-text class="header-text">Product Details</el-text>
     </template>
 
     <LoadingSpinner v-if="isLoading" />
-    <div v-else-if="error" class="body-container">{{ error }}</div>
+    <el-space v-else-if="error" class="body-container">{{ error }}</el-space>
     <div v-else class="body-container">
       <div class="image-container">
         <el-image :src="product?.image" fit="contain" lazy />
       </div>
 
-      <div class="details-container">
-        <p class="title">{{ product?.title }}</p>
-        <p class="category">{{ product?.category }}</p>
-        <p class="description">{{ product?.description }}</p>
-        <div class="reviews">
-          <p>
-            Rating: <span>{{ product?.rating?.rate }}</span>
-          </p>
-          <p>
-            Stock: <span>{{ product?.rating?.count }}</span>
-          </p>
-        </div>
-        <p class="price">₱ {{ product?.price?.toLocaleString() }}</p>
-      </div>
+      <el-space alignment="start" class="details-container">
+        <el-text class="title">{{ product?.title }}</el-text>
+        <el-text class="category">{{ product?.category }}</el-text>
+        <el-text class="description">{{ product?.description }}</el-text>
+        <el-space class="reviews">
+          <el-text>
+            <span>Rating: </span>
+            {{ product?.rating?.rate }}
+          </el-text>
+
+          <el-text>
+            <span>Rating: </span>
+            {{ product?.rating?.count }}
+          </el-text>
+        </el-space>
+        <el-text class="price">
+          ₱ {{ product?.price?.toLocaleString() }}
+        </el-text>
+      </el-space>
     </div>
 
     <template #footer>
@@ -87,11 +92,11 @@ const handleSubmit = () => {
 </script>
 
 <style scoped>
-.dialog-header {
-  text-align: center;
-  text-transform: uppercase;
+.header-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 700;
-  color: var(--neutral);
   font-size: 24px;
   margin-bottom: 3rem;
 }
@@ -143,11 +148,14 @@ const handleSubmit = () => {
 .category {
   font-weight: 600;
   color: rgb(168, 164, 164);
+  letter-spacing: 0.5px;
 }
 
 .description {
   font-weight: 400;
   color: var(--neutral);
+  letter-spacing: 0.5px;
+  line-height: 1.8;
 }
 
 .reviews {
@@ -155,23 +163,16 @@ const handleSubmit = () => {
   justify-content: start;
   align-items: center;
   gap: 20px;
+  margin-bottom: 1rem;
 }
 
-.reviews p {
+.reviews span {
   font-weight: 600;
   font-size: 12px;
-  margin-bottom: 2rem;
 }
 
 .price {
   font-weight: 600;
-  font-size: 24px;
-}
-
-.icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
+  font-size: 28px;
 }
 </style>
