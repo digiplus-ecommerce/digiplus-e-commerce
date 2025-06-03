@@ -8,6 +8,7 @@ import CreateProductView from "../views/defaultLayout/CreateProductView.vue";
 import LoginView from "../views/specialLayout/LoginView.vue";
 import SignupView from "../views/specialLayout/SignupView.vue";
 import JewelryView from "../views/defaultLayout/JewelryView.vue";
+import AdminLoginView from "../views/specialLayout/AdminLoginView.vue";
 
 const routes = [
   { path: "/", name: "home", component: HomeView, meta: { layout: "default" } },
@@ -57,6 +58,12 @@ const routes = [
     path: "/signup",
     name: "signup",
     component: SignupView,
+    meta: { layout: "special" },
+  },
+  {
+    path: "/admin-login",
+    name: "admin-login",
+    component: AdminLoginView,
     meta: { layout: "special" },
   },
 ];
