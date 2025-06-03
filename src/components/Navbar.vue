@@ -10,15 +10,19 @@
       <RouterLink to="/">
         <el-text>Home</el-text>
       </RouterLink>
+
       <RouterLink to="/womens">
         <el-text>Womens</el-text>
       </RouterLink>
+
       <RouterLink to="/mens">
         <el-text>Mens</el-text>
       </RouterLink>
+
       <RouterLink to="/electronics">
         <el-text>Electronics</el-text>
       </RouterLink>
+
       <RouterLink to="/jewelry">
         <el-text>Jewelry</el-text>
       </RouterLink>
@@ -28,12 +32,15 @@
       <RouterLink to="/login">
         <el-text>ordiales@gmail.com</el-text>
       </RouterLink>
+
       <RouterLink to="/login">
         <el-text>Logout</el-text>
       </RouterLink>
+
       <RouterLink to="/signup">
         <el-icon :size="18"><ShoppingBag /></el-icon>
       </RouterLink>
+
       <RouterLink to="/signup">
         <el-icon :size="20"><Van /></el-icon>
       </RouterLink>

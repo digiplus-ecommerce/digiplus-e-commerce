@@ -82,6 +82,14 @@ onMounted(() => {
   margin: 0 auto;
 }
 
+.card-container {
+  cursor: pointer;
+}
+/* .card-container:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+} */
+
 .banner-container {
   display: flex;
   justify-content: space-between;
