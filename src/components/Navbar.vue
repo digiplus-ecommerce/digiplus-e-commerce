@@ -31,7 +31,7 @@
       <RouterLink to="/login">
         <el-text>Logout</el-text>
       </RouterLink>
-      <RouterLink to="/signup">
+      <RouterLink to="/admin-login">
         <el-icon :size="18"><ShoppingBag /></el-icon>
       </RouterLink>
       <RouterLink to="/signup">
