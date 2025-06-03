@@ -23,7 +23,7 @@
   width: 100%;
   min-width: 85rem;
   height: 600px;
-  border: 1px solid red;
+  border: 2px solid violet;
 
   display: flex;
   justify-content: space-between;
