@@ -13,7 +13,7 @@
       <div class="form-container">
         <p class="title">Login to Shop</p>
 
-        {{ loginForm }}
+        <!-- {{ loginForm }} -->
 
         <el-form
           ref="ruleFormRef"
