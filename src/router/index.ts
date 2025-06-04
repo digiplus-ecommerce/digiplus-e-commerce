@@ -8,8 +8,11 @@ import CreateProductView from "../views/defaultLayout/CreateProductView.vue";
 import LoginView from "../views/specialLayout/LoginView.vue";
 import SignupView from "../views/specialLayout/SignupView.vue";
 import JewelryView from "../views/defaultLayout/JewelryView.vue";
-import AdminLoginView from "../views/specialLayout/adminSide/AdminLoginView.vue";
-import DashboardView from "../views/specialLayout/adminSide/DashboardView.vue";
+import DashboardView from "../views/adminLayout/DashboardView.vue";
+import AdminLoginView from "../views/adminLayout/AdminLoginView.vue";
+import ProductsView from "../views/adminLayout/ProductsView.vue";
+import UsersView from "../views/adminLayout/UsersView.vue";
+import OrdersView from "../views/adminLayout/OrdersView.vue";
 
 const routes = [
   { path: "/", name: "home", component: HomeView, meta: { layout: "default" } },
@@ -65,13 +68,31 @@ const routes = [
     path: "/admin-login",
     name: "admin-login",
     component: AdminLoginView,
-    meta: { layout: "special" },
+    meta: { layout: "admin-auth" },
   },
   {
     path: "/dashboard",
     name: "dashboard",
     component: DashboardView,
-    meta: { layout: "special" },
+    meta: { layout: "admin" },
+  },
+  {
+    path: "/admin-products",
+    name: "admin-products",
+    component: ProductsView,
+    meta: { layout: "admin" },
+  },
+  {
+    path: "/admin-users",
+    name: "admin-users",
+    component: UsersView,
+    meta: { layout: "admin" },
+  },
+  {
+    path: "/admin-orders",
+    name: "admin-orders",
+    component: OrdersView,
+    meta: { layout: "admin" },
   },
 ];
 

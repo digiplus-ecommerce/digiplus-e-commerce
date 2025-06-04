@@ -1,43 +1,38 @@
 <template>
-  <el-space class="signup-wrapper">
-    <el-space class="form-wrapper" fill="fill" :size="42">
-      <el-space class="header-container">
-        <p class="title">Admin Login</p>
-        <p class="description">Welcome back! please enter your details.</p>
-      </el-space>
-
-      <el-form
-        ref="ruleFormRef"
-        :label-position="labelPosition"
-        label-width="auto"
-        :model="ruleForm"
-        :rules="rules"
-        width="400px"
-      >
-        <el-form-item
-          label="Username"
-          :label-position="itemLabelPosition"
-          prop="username"
-        >
-          <el-input v-model="ruleForm.username" />
-        </el-form-item>
-
-        <el-form-item
-          label="Password"
-          :label-position="itemLabelPosition"
-          prop="password"
-        >
-          <el-input v-model="ruleForm.password" />
-        </el-form-item>
-
-        <Button
-          btnType="button"
-          type="primary"
-          @click="handleLogin(ruleFormRef)"
-          >Login</Button
-        >
-      </el-form>
+  <el-space class="form-wrapper" fill="fill" :size="42">
+    <el-space class="header-container">
+      <p class="title">Admin Login</p>
+      <p class="description">Welcome back! please enter your details.</p>
     </el-space>
+
+    <el-form
+      ref="ruleFormRef"
+      :label-position="labelPosition"
+      label-width="auto"
+      :model="ruleForm"
+      :rules="rules"
+      width="400px"
+    >
+      <el-form-item
+        label="Username"
+        :label-position="itemLabelPosition"
+        prop="username"
+      >
+        <el-input v-model="ruleForm.username" />
+      </el-form-item>
+
+      <el-form-item
+        label="Password"
+        :label-position="itemLabelPosition"
+        prop="password"
+      >
+        <el-input v-model="ruleForm.password" />
+      </el-form-item>
+
+      <Button btnType="button" type="primary" @click="handleLogin(ruleFormRef)"
+        >Login</Button
+      >
+    </el-form>
   </el-space>
 </template>
 
@@ -49,7 +44,7 @@ import type {
   FormProps,
   FormRules,
 } from "element-plus";
-import Button from "../../../components/Button.vue";
+import Button from "../../components/Button.vue";
 import { useRouter } from "vue-router";
 
 interface AdminRuleForm {
