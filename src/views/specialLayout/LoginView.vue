@@ -13,25 +13,15 @@
       <div class="form-container">
         <p class="title">Login to Shop</p>
 
-        <!-- {{ loginForm }} -->
-
-        <el-form
-          ref="ruleFormRef"
-          :model="loginForm"
-          :rules="ruleLoginForm"
-          @submit.prevent="onSubmit"
-        >
+        <el-form :model="form" label-width="100px">
           <el-form-item label="Username">
-            <el-input v-model="loginForm.username" />
+            <el-input v-model="form.username" />
           </el-form-item>
-
           <el-form-item label="Password">
-            <el-input v-model="loginForm.password" />
+            <el-input type="password" v-model="form.password" />
           </el-form-item>
-
           <el-form-item>
-            <el-button type="primary" @click="onSubmit">Create</el-button>
-            <el-button>Cancel</el-button>
+            <el-button type="primary" @click="login">Login</el-button>
           </el-form-item>
         </el-form>
       </div>
@@ -40,34 +30,28 @@
 </template>
 
 <script setup lang="ts">
+import { reactive } from "vue";
+import { useAuthStore } from "../../store/useAuthStore";
+import { ElMessage } from "element-plus";
 import { DotLottieVue } from "@lottiefiles/dotlottie-vue";
-import type { FormInstance, FormRules } from "element-plus";
-import { reactive, ref } from "vue";
+import { useRouter } from "vue-router";
 
-const ruleFormRef = ref<FormInstance>();
+const authStore = useAuthStore();
+const router = useRouter();
+authStore.loadUsers();
 
-const loginForm = reactive({
+const form = reactive({
   username: "",
   password: "",
 });
 
-const ruleLoginForm = reactive<FormRules>({
-  username: [
-    { required: true, message: "Username is required", trigger: "blur" },
-  ],
-  password: [
-    { required: true, message: "Password is required", trigger: "blur" },
-  ],
-});
-
-const onSubmit = async () => {
+const login = () => {
   try {
-    const isValid = await ruleFormRef.value?.validate();
-    if (isValid) {
-      console.log("Form Submitted");
-    }
-  } catch (error) {
-    console.log("Error Submitted");
+    authStore.login(form.username, form.password);
+    ElMessage.success("Logged in successfully!");
+    router.push('/')
+  } catch (error: any) {
+    ElMessage.error(error.message);
   }
 };
 </script>
@@ -108,7 +92,6 @@ const onSubmit = async () => {
 }
 
 .form-container {
-  width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;

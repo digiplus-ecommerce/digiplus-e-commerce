@@ -1,7 +1,14 @@
 <template>
   <el-space class="signup-wrapper">
     <el-space class="form-wrapper">
-      <el-space class="image-container"> </el-space>
+      <el-space class="image-container">
+        <DotLottieVue
+          style="height: 800px; width: 800px"
+          autoplay
+          loop
+          src="https://lottie.host/e9e566fd-ae83-4bc8-86f8-0342874b0991/iqHoSuiVKa.lottie"
+        />
+      </el-space>
 
       <!-- =============================================================================== -->
       <el-form :model="form" label-width="auto" style="max-width: 600px">
@@ -34,9 +41,16 @@
 </template>
 
 <script setup lang="ts">
+import { DotLottieVue } from "@lottiefiles/dotlottie-vue";
 import { reactive } from "vue";
+import { useAuthStore } from "../../store/useAuthStore";
+import { ElMessage } from "element-plus";
+import { useRouter } from "vue-router";
 
-// do not use same name with ref
+const authStore = useAuthStore();
+const router = useRouter();
+authStore.loadUsers();
+
 const form = reactive({
   username: "",
   lastname: "",
@@ -46,7 +60,21 @@ const form = reactive({
 });
 
 const onSubmit = () => {
-  console.log("submit!");
+  if (form.password !== form.repassword) {
+    ElMessage.error("Password do no match");
+    return;
+  }
+  try {
+    authStore.register({
+      username: form.username,
+      lastname: form.lastname,
+      password: form.password,
+    });
+    ElMessage.success("User registered successfully");
+    router.push("/login");
+  } catch (error: any) {
+    ElMessage.error(error.message);
+  }
 };
 </script>
 

@@ -30,7 +30,7 @@
 
     <el-space class="auth-links" alignment="center" :size="5">
       <RouterLink to="/login">
-        <el-text>ordiales@gmail.com</el-text>
+        <el-text>{{ authStore.currentUser?.username }}</el-text>
       </RouterLink>
 
       <RouterLink to="/login">
@@ -50,6 +50,8 @@
 
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
+import { useAuthStore } from "../store/useAuthStore";
+const authStore = useAuthStore();
 </script>
 
 <style scoped>
