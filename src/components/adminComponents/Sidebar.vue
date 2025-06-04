@@ -21,18 +21,20 @@
       <!-- Section Items -->
       <el-menu-item v-for="items in section.items" :key="items.index">
         <el-icon><component :is="items.icon" /></el-icon>
-        <RouterLink :to="items.link">
-          <el-text>{{ items.title }}</el-text>
-        </RouterLink>
+        <template #title>
+          <RouterLink :to="items.link">
+            <el-text>{{ items.title }}</el-text>
+          </RouterLink>
+        </template>
       </el-menu-item>
     </template>
 
-    <el-button @click="handleCollapsed" class="sidebar-toggler" circle>
+    <Button @click="handleCollapsed" class="sidebar-toggler" circle>
       <el-icon>
         <DArrowRight v-if="isCollapsed" />
         <DArrowLeft v-else />
       </el-icon>
-    </el-button>
+    </Button>
   </el-menu>
 </template>
 
@@ -40,6 +42,7 @@
 import { ref } from "vue";
 import { DArrowLeft, DArrowRight } from "@element-plus/icons-vue";
 import { menuSections } from "../../constants";
+import Button from "../Button.vue";
 
 const isCollapsed = ref(false);
 

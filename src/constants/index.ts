@@ -1,4 +1,10 @@
-import { Grid, ShoppingBag, ShoppingCartFull } from "@element-plus/icons-vue";
+import {
+  Grid,
+  ShoppingBag,
+  ShoppingCartFull,
+  User,
+  CircleClose,
+} from "@element-plus/icons-vue";
 
 export const menuSections = [
   // first section
@@ -21,7 +27,7 @@ export const menuSections = [
     items: [
       {
         index: "4",
-        icon: ShoppingCartFull,
+        icon: User,
         title: "Users",
         link: "/admin-users",
       },
@@ -30,6 +36,12 @@ export const menuSections = [
         icon: ShoppingCartFull,
         title: "Orders",
         link: "/admin-orders",
+      },
+      {
+        index: "5",
+        icon: CircleClose,
+        title: "Logout",
+        link: "/admin-login",
       },
     ],
   },

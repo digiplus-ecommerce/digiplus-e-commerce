@@ -18,9 +18,8 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-
-import Header from "../../components/adminComponents/Header.vue";
 import Sidebar from "../../components/adminComponents/Sidebar.vue";
+import Header from "../../components/adminComponents/Header.vue";
 
 const isCollapsed = ref(false);
 
@@ -33,6 +32,10 @@ const toggleCollapsed = () => {
 .layout-container {
   display: flex;
   width: 100%;
+  height: 100%;
+}
+
+.el-main {
   height: 100%;
 }
 
