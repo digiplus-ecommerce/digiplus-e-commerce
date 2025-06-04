@@ -62,6 +62,10 @@ const productDetails = (id: string) => {
   display: flex;
   flex-direction: column;
 }
+.card-col:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
 
 .card-img-container {
   width: 100%;
